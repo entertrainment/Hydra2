@@ -1,0 +1,6 @@
+{
+    "remoteLogURL": "https://your.remote.server/logs",
+    "threatThreshold": 0.75,
+    "decoyRefreshInterval": 300,
+    "enableRemoteLogging": true
+}

@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E3CBA4A12DAD7FD00079E55E /* libpcap.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3CBA4A02DAD7FD00079E55E /* libpcap.tbd */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E3CBA41D2DAD7F330079E55E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		E3CBA40B2DAD7F320079E55E /* Hydra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hydra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3CBA41C2DAD7F330079E55E /* HydraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HydraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3CBA4262DAD7F330079E55E /* HydraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HydraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3CBA4A02DAD7FD00079E55E /* libpcap.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpcap.tbd; path = usr/lib/libpcap.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3CBA4A12DAD7FD00079E55E /* libpcap.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,7 @@
 				E3CBA40D2DAD7F320079E55E /* Hydra */,
 				E3CBA41F2DAD7F330079E55E /* HydraTests */,
 				E3CBA4292DAD7F330079E55E /* HydraUITests */,
+				E3CBA49F2DAD7FD00079E55E /* Frameworks */,
 				E3CBA40C2DAD7F320079E55E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +97,14 @@
 				E3CBA4262DAD7F330079E55E /* HydraUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E3CBA49F2DAD7FD00079E55E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3CBA4A02DAD7FD00079E55E /* libpcap.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

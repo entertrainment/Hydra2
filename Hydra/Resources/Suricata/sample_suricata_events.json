@@ -1,0 +1,32 @@
+[
+    {
+        "timestamp": "2025-04-12T14:31:24Z",
+        "category": "Alert",
+        "severity": "high",
+        "message": "ET TROJAN Possible Pegasus Exploit attempt",
+        "source_ip": "192.168.1.10",
+        "destination_ip": "192.168.1.5",
+        "protocol": "TCP",
+        "port": 443
+    },
+    {
+        "timestamp": "2025-04-12T14:29:12Z",
+        "category": "Notice",
+        "severity": "medium",
+        "message": "Suspicious DNS query for .xyz domain",
+        "source_ip": "192.168.1.99",
+        "destination_ip": "8.8.8.8",
+        "protocol": "UDP",
+        "port": 53
+    },
+    {
+        "timestamp": "2025-04-12T14:27:03Z",
+        "category": "Threat",
+        "severity": "low",
+        "message": "Potential port scan activity detected",
+        "source_ip": "192.168.1.77",
+        "destination_ip": "192.168.1.1",
+        "protocol": "TCP",
+        "port": 80
+    }
+]

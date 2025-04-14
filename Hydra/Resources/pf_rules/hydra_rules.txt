@@ -1,0 +1,2 @@
+# Hydra Interface Block Rules
+block drop on en0 all
