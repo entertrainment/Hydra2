@@ -11,7 +11,9 @@ struct Client: Identifiable {
     
     mutating func updateRSSI(_ newRSSI: Int) {
         rssiHistory.append(RSSIPoint(time: Date(), value: newRSSI))
-        if rssiHistory.count > 30 { rssiHistory.removeFirst() }
+        if rssiHistory.count > 30 {
+            rssiHistory.removeFirst()
+        }
     }
 }
 

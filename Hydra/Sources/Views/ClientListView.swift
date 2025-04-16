@@ -1,10 +1,16 @@
 import SwiftUI
 
 struct ClientListView: View {
-    @State private var clients: [Client] = [
+    // Declare clients as a constant so that Swift generates a memberwise initializer.
+    let clients: [Client]
+    
+    // Provide a default value in the initializer.
+    init(clients: [Client] = [
         Client(name: "SuspiciousClient1", mac: "AA:BB:CC:DD:EE:FF", ip: "192.168.0.105", rssi: -45),
-        Client(name: "UnknownNode", mac: "11:22:33:44:55:66", ip: "192.168.0.88", rssi: -67)
-    ]
+        Client(name: "UnknownNode",       mac: "11:22:33:44:55:66", ip: "192.168.0.88", rssi: -67)
+    ]) {
+        self.clients = clients
+    }
     
     @State private var selectedCommand: String = ""
     @State private var logOutput: [String] = []
@@ -20,10 +26,13 @@ struct ClientListView: View {
     
     var body: some View {
         VStack {
-            Text("Connected Clients").font(.title).bold()
+            Text("Connected Clients")
+                .font(.title)
+                .bold()
+            
             Picker("Filter by Threat", selection: $threatLevelFilter) {
-                ForEach(threatLevels, id: \.self) {
-                    Text($0)
+                ForEach(threatLevels, id: \.self) { level in
+                    Text(level)
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
@@ -84,10 +93,13 @@ struct ClientListView: View {
             }
             
             Divider()
-            Text("Log Output").font(.headline)
+            Text("Log Output")
+                .font(.headline)
             ScrollView {
                 ForEach(logOutput, id: \.self) { line in
-                    Text(line).font(.caption).padding(.vertical, 1)
+                    Text(line)
+                        .font(.caption)
+                        .padding(.vertical, 1)
                 }
             }
             .frame(height: 200)
@@ -156,5 +168,14 @@ struct ClientListView: View {
     
     private func mockThreatScore(for client: Client) -> Double {
         return Double(abs(client.mac.hashValue % 100)) / 100.0
+    }
+}
+
+struct ClientListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ClientListView(clients: [
+            Client(name: "SuspiciousClient1", mac: "AA:BB:CC:DD:EE:FF", ip: "192.168.0.105", rssi: -45),
+            Client(name: "UnknownNode", mac: "11:22:33:44:55:66", ip: "192.168.0.88", rssi: -67)
+        ])
     }
 }

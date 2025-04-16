@@ -67,3 +67,27 @@ class SuricataFeedParser: ObservableObject {
         }
     }
 }
+import Foundation
+
+extension FileHandle {
+    /// Reads the entire file content and returns an array of lines.
+    func readAllLines() -> [String] {
+        let data = self.readDataToEndOfFile()
+        guard let content = String(data: data, encoding: .utf8) else { return [] }
+        return content.components(separatedBy: .newlines)
+    }
+}
+
+///class SuricataFeedParser {
+///    func parseFile(atPath path: String) {
+///        if let fileHandle = FileHandle(forReadingAtPath: path) {
+///            let lines = fileHandle.readAllLines()
+///            for line in lines {
+///                print("[SuricataFeedParser] Parsed line: \(line)")
+                // Further process each line as needed.
+///            }
+ ///       } else {
+///            print("[SuricataFeedParser] Failed to open file at path: \(path)")
+///        }
+///    }
+///}

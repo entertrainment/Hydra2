@@ -21,7 +21,7 @@ struct SuricataLiveAlertView: View {
                             Text("Type: \(entry.query_type)")
                         }
                         .padding()
-                        .background(Color(.secondarySystemBackground))
+                        .background(Color.secondary)
                         .cornerRadius(6)
                     }
                 }
